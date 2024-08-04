@@ -1,0 +1,133 @@
+.container{
+    background-color: #9d9d9d;
+}
+
+.container h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.wrapper{
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.wrapper h2{
+    margin-top: 10px;
+}
+
+.content{
+    border: solid black 1px;
+    border-radius: 10px;
+    margin: 10px ;
+    background-color: #adadad;
+    padding: 10px;
+    font-size: 18px;
+    display: flex;
+    transition: 0.5s;
+    align-items: center;
+}
+
+.content:hover{
+    background-color: #e0e0e0;
+    transform: scale(1.03);
+    box-shadow: 0 0 15px #f3efef;
+}
+
+.content h4{
+    margin: 4px 8px;
+}
+
+.content h4 a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.content p{
+    margin: 4px 8px;
+}
+
+.view-topic{
+    margin: 4px 8px 10px 8px;
+    text-decoration: none;
+    border: solid black 1px;
+    background-color: #c5c5c5;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-weight: bold;
+    color: black;
+}
+
+.open-topic{
+    text-decoration: None;
+    color: black;
+    border: solid black 1px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    background-color: #c5c5c5;
+    font-weight: bold;
+}
+
+.back-link{
+    text-decoration: None;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.content .post-topic{
+    font-size: 18px;
+}
+
+.paginate-wrap{
+    display: block;
+    margin: 10px auto;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 20px;
+    width: fit-content;
+    padding: 3px;
+}
+
+.paginate-wrap nav ul{
+    display: flex;
+}
+
+.paginate-wrap nav ul li{
+    margin: 0 10px;
+    list-style: none;
+    font-weight: 700;
+}
+
+.paginate-wrap nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.pagination li.active a {
+    color: red;
+}
+
+.image{
+    border-radius: 100px;
+    overflow: hidden;
+    max-width: 100px;
+    max-height: 100px;
+    margin: 0px 10px;
+    height: 100px;
+    width: 100px;
+}
+.image img{
+    max-width: 100%;
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+}
+
+@media (max-width: 500px) {
+    .image {
+        max-width: 60px;
+        max-height: 60px;
+    }
+}

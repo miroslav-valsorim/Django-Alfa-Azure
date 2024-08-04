@@ -1,0 +1,396 @@
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo{
+    width: 50px;
+    background-color: #af1e2d;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/*  ---------- DROP DOWN MENU ------------  */
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #af1e2d;
+min-width: 150px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {
+background-color: #e40101
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown:hover .dropbtn {
+background-color: #af1e2d;
+}
+
+/* ------------------------   */
+
+.header{
+    background-color: #af1e2d;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+
+    justify-content: space-between;
+}
+
+.navigation .nav-item a{
+    color: white;
+    text-decoration: none;
+}
+
+.navigation .list{
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.navigation{
+    margin-left: auto;
+    margin-right: 150px;
+    display: block;
+}
+.navigation ul li{
+    position: relative;
+}
+
+.navigation ul li::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+.navigation ul li:hover::after{
+    width: 100%;
+}
+
+.last-nav-item{
+    padding:0 10px;
+}
+
+/* FOOTER */
+
+footer{
+    padding: 30px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    color: white;
+    text-decoration: none;
+    gap: 100px;
+    line-height: 34px;
+}
+
+.footer-logo{
+    max-width: 100px;
+    margin-right: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-div ul{
+    text-align: left;
+    padding: 0;
+}
+
+.footer-div ul li{
+    list-style: none;
+}
+
+.footer-div ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.links-web ul li{
+    display: inline-block;
+    /*margin: auto;*/
+    font-size: 40px;
+    margin-left: 8px;
+    margin-top: 10px;
+}
+
+.links-web ul li a{
+    color: gray;
+}
+
+.rights-reserved{
+    display: block;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+
+
+
+.drop-btn{
+    display: none;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1000px){
+
+    .navigation{
+        margin-right: 16px;
+    }
+
+    .footer-links{
+        gap: 20px;
+    }
+
+    .footer-logo{
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 850px){
+    .header{
+        flex-direction: column;
+        position: unset;
+    }
+
+    .header .logo-a{
+        margin-bottom: 10px;
+    }
+
+    .navigation{
+        margin: unset;
+    }
+
+    .navigation .list{
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .navigation a.hide-content {
+        display: none;
+    }
+
+    .dropdown .fa-angles-down{
+        display: none;
+        visibility: hidden;
+    }
+
+    .dropdown-content{
+        display: none;
+        visibility: hidden;
+    }
+
+    .navigation ul li::after{
+        display: none;
+        visibility: hidden;
+    }
+
+    .navigation ul li:hover::after{
+        display: none;
+        visibility: hidden;
+    }
+
+    .footer-logo{
+        margin: unset;
+    }
+
+    .footer-links{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-div ul{
+        text-align: center;
+    }
+
+    .rights-reserved{
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navigation .list{
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .navigation{
+        margin-right: 10px;
+    }
+
+    .dropdown .fa-angles-down{
+        display: none;
+        visibility: hidden;
+    }
+
+    .dropdown-content{
+        display: none;
+        visibility: hidden;
+    }
+
+    .footer-links{
+        flex-direction: column;
+    }
+
+    .navigation ul li::after{
+        display: none;
+        visibility: hidden;
+    }
+
+    .navigation ul li:hover::after{
+        display: none;
+        visibility: hidden;
+    }
+
+    .header{
+        flex-direction: row;
+    }
+
+    .dropdown-wrapper {
+        float: left;
+        overflow: hidden;
+        margin-right: 30px;
+    }
+
+    .dropdown-wrapper .drop-btn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+    }
+
+
+    .dropdown-content-mobile {
+        display: none;
+        position: absolute;
+        background-color: #af1e2d;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-right: 50px;
+        right: -50px;
+    }
+
+    .dropdown-content-mobile a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content-mobile a:hover {
+        background-color: red;
+    }
+
+    .drop-btn{
+        display: unset;
+    }
+
+    .drop-btn i{
+        font-size: 20px;
+    }
+
+    .drop-btn:hover{
+        /*background-color: red;*/
+        cursor: pointer;
+    }
+
+    .navigation .list{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .last-nav-item{
+        padding: unset;
+    }
+
+}
+
+@media (max-width: 490px){
+    .navigation{
+        margin: 0 20px;
+    }
+
+    /*.navigation .list{*/
+    /*    display: grid;*/
+    /*    grid-template-columns: repeat(5, 1fr);*/
+    /*    margin-top: 10px;*/
+    /*}*/
+
+    .header{
+        position: unset;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .content p{
+        max-width: 400px;
+        font-size: 18px;
+    }
+
+    .content h2{
+        font-size: 26px;
+    }
+
+}
+
+@media (max-width: 410px){
+    .navigation{
+        margin: 0 10px;
+    }
+
+    /*.navigation .list{*/
+    /*    display: grid;*/
+    /*    grid-template-columns: repeat(3, 1fr);*/
+    /*    margin-top: 10px;*/
+    /*}*/
+
+     .content p{
+        max-width: 360px;
+        font-size: 16px;
+    }
+
+    .content h2{
+        font-size: 22px;
+    }
+}

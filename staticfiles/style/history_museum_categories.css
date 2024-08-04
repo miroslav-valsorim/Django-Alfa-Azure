@@ -1,0 +1,125 @@
+.content{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url("/static/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 70%;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: white;
+    max-height: 700px;
+    height: 700px;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    max-width: 1400px;
+}
+
+.wrapper a{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    margin: auto;
+}
+
+.museum-category{
+    display: block;
+    max-width: 300px;
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+    margin: 20px;
+    transition: 0.5s;
+}
+
+.museum-category:hover{
+    transform: scale(1.08);
+    background-color: white;
+    box-shadow: 0 0 15px #ed0505
+}
+
+.museum-img-container{
+    width: 300px;
+    height: 250px;
+    max-width: 300px;
+    max-height: 250px;
+}
+
+.museum-category img{
+    width: 300px;
+    height: 250px;
+    max-width: 300px;
+    max-height: 250px;
+    padding: 4px;
+    border-radius: 18px ;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+
+@media (max-width: 1400px){
+    .museum-category{
+        margin: 5px;
+    }
+
+    .wrapper{
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 1000px){
+
+    .wrapper{
+        height: unset;
+        max-height: unset;
+        flex-direction: column;
+    }
+
+    .wrapper{
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 650px;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .museum-category img{
+        width: 200px;
+        height: 200px;
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .museum-img-container{
+        width: 200px;
+        height: 200px;
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .museum-category{
+        max-width: 200px;
+    }
+
+    .wrapper{
+        max-width: 500px;
+    }
+
+    .wrapper a{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 470px){
+
+    .wrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}

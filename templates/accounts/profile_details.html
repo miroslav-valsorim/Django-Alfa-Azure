@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_style %}
+        <link rel="stylesheet" href="{% static "/style/profile_details.css" %}">
+{% endblock %}
+
+{% block main_content %}
+    
+    <div class="profile-details">
+         <h2>Profile Details</h2>
+             
+             <div class="personal">
+             
+                    <div class="profile-img">
+                    
+                        <div class="image">
+                        
+                            {% if object.profile_picture %}
+                                <img src="{{ object.profile_picture }}" alt="img8"/>
+                            {% else %}
+                                <img src="{% static 'images/no-profile-picture.jpg' %}" alt="img8"/>
+                            {% endif %}
+                        
+                        </div>
+                    
+                    </div>
+             
+                    <div class="personal-info">
+                    
+                        {% if object.full_name %}
+                            <p>Full Name: {{ object.full_name }}</p>
+                        {% endif %}
+        
+                        {% if object.date_of_birth %}
+                            <p>Birthday: {{ object.date_of_birth|date }}</p>
+                        {% endif %}
+                 
+                        {% if object.phone_number %}
+                            <p class="phone-number">Phone: {{ object.phone_number }}</p>
+                        {% endif %}
+        
+                        <p class="email">Email: {{ object.user.email }}</p>
+                 
+                         {% if request.user.is_superuser %}
+                             <p>Rank: Admin</p>
+                         {% elif request.user.is_staff %}
+                             <p>Rank: Moderator</p>
+                         {% endif %}
+                        
+                    </div>
+             
+                    <div class="profile-links">
+                        <a class='links' href="{% url 'edit-profile' pk=object.pk %}">Edit Profile <i class="fa-solid fa-pen"></i></a>
+
+                        <a class='links' href="{% url 'password-change' pk=object.pk %}">Change Password <i class="fa-solid fa-key"></i></a>
+
+                        <a class='links' href="{% url 'logout-user' %}">Log Out <i class="fa-solid fa-right-from-bracket"></i></a>
+
+                        {% if request.user.is_superuser %}
+
+                            <a class='links' href="{% url 'admin:index' %}">Admin Panel <i class="fa-solid fa-lock"></i></a>
+                            <a class='links' href="{% url 'staff_panel' %}">Staff Panel <i class="fa-solid fa-lock"></i></a>
+
+                        {% elif request.user.is_staff %}
+
+                            <a class='links' href="{% url 'staff_panel' %}">Staff Panel <i class="fa-solid fa-lock"></i></a>
+
+                        {% endif %}
+
+                        <a class='links' href="{% url 'delete-profile' pk=object.pk %}">Delete Profile <i class="fa-solid fa-trash"></i></a>
+
+                        <a class='links' href="{% url 'orders-profile' pk=object.pk %}">Your Orders <i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+             
+             </div>
+
+    </div>
+
+{% endblock %}

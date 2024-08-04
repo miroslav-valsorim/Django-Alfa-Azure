@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_style %}
+    <link rel="stylesheet" href="{% static "/style/news_list.css" %}">
+{% endblock %}
+
+{% block main_content %}
+    
+    <div class="news-content">
+    
+        <div class="news-cards-container">
+                {#  comes from js fetch  #}
+        </div>
+        
+        <div class="paginate-wrap">
+            <nav>
+                <ul class="pagination" id="pagination">
+                     {#  comes from js  #}
+                </ul>
+            </nav>
+        </div>
+        
+        <script src="{% static 'js/news/news_listing.js' %}"></script>
+    
+    </div>
+
+{% endblock %}

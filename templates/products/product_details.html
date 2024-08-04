@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_style %}
+    <link rel="stylesheet" href="{% static "/style/product_details.css" %}">
+{% endblock %}
+
+{% block main_content %}
+
+<div class="product-detail">
+
+     <div class="detail-container">
+     
+        {% if messages %}
+            
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            
+        {% endif %}
+         
+         <h2>{{ object.title }}</h2>
+            
+            <div class="wrapper">
+                    
+                    <div class="images">
+
+                        {% if object.images.first %}
+                
+                            <div class="image-container">
+                                <img id="main-image" src="{{ object.images.first.image.url }}" alt="{{ object.title }} img">
+                            </div>
+                        
+                        {% elif object.category.name %}
+                            
+                            {% if object.category.name == 'Tickets' %}
+                                
+                                <div class="image-container">
+                                    <img src="{% static 'images/line-icon-for-tickets-vector.jpg' %}" alt="{{ object.title }} img">
+                                </div>
+                                
+                            {% else %}
+                                
+                                <div class="image-container">
+                                    <img src="{% static 'images/No-Image-Placeholder.svg.png' %}" alt="{{ object.title }} img">
+                                </div>
+                                
+                            {% endif %}
+                            
+                        {% else %}
+                            
+                            <div class="image-container">
+                                <img src="{% static 'images/No-Image-Placeholder.svg.png' %}" alt="{{ object.title }} img">
+                            </div>
+                            
+                        {% endif %}
+            
+                        {% if object.images.count > 1 %}
+                            
+                            <div class="all-product-images">
+                            
+                                {% for image in object.images.all %}
+                                    
+                                    <div class="one-image">
+                                        <img class="thumbnail" src="{{ image.image.url }}" alt="{{ object.title }} img">
+                                    </div>
+                                    
+                                {% endfor %}
+                            
+                            </div>
+                            
+                        {% endif %}
+                    
+                    </div>
+            
+                     <div class="info">
+                        
+                     <div class="description">
+                         <p>{{ object.description | linebreaks }}</p>
+                     </div>
+                         
+                          <div class="prices-container">
+
+                                 {% if object.discount_price %}
+                                     <p>Price: 
+                                         <span class="underline-price">{{ object.price }} $</span> 
+                                         <span class="discount-price">{{ object.discount_price }} $</span>
+                                     </p>
+                                {% else %}
+                                     <p class="normal-price">Price: {{ object.price }} $</p>
+                                {% endif %}
+                          
+                          </div>
+                     
+                            {% if object.quantity > 0 %}
+
+                                {% if user.is_authenticated %}
+                                    <a class="add-to-cart" href="{% url "add_to_cart" slug=object.slug %}">ADD TO CART <i class="fa-solid fa-cart-shopping"></i></a>
+                                {% else %}
+                                    <a class="signin" href="{% url 'login-user' %}">Sign in to purchase</a>
+                                {% endif %}
+                                
+                            {% else %}
+                                
+                                <p class="out-of-stock">Out of Stock</p>
+                                
+                            {% endif %}
+                     
+                     </div>
+            
+            </div>
+         
+     </div>
+
+</div>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all thumbnail images
+        var thumbnails = document.querySelectorAll('.thumbnail');
+    
+        // Add click event listener to each thumbnail
+        thumbnails.forEach(function(thumbnail) {
+            thumbnail.addEventListener('click', function() {
+                // Get the src attribute of the clicked thumbnail
+                var src = this.getAttribute('src');
+    
+                // Set the src attribute of the main image to the clicked thumbnail's src
+                document.getElementById('main-image').setAttribute('src', src);
+            });
+        });
+    });
+</script>
+
+{% endblock %}

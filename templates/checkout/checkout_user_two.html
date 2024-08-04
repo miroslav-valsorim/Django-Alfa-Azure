@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_style %}
+    <link rel="stylesheet" href="{% static "/style/checkout_second_step.css" %}">
+{% endblock %}
+
+{% block main_content %}
+    
+      <div class="container">
+      
+         {% if messages %}
+             
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+             
+        {% endif %}
+      
+          <h2>Shipping information</h2>
+      
+          <div class="form-container">
+              
+              <form method="post" action="{% url 'second_step' pk=request.user.pk %}">
+                  
+                {{ form }}
+                {% csrf_token %}
+                <button>Continue Checkout</button>
+                  
+              </form>
+              
+          </div>
+            
+      </div>
+    
+{% endblock %}

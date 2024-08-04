@@ -1,0 +1,32 @@
+
+services:
+  alfa-romeo-web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./alfa_romeo_web/:/usr/src/app/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./envs/.env
+    depends_on:
+      - alfa-romeo-db
+    networks:
+      - alfa_romeo_network
+
+  alfa-romeo-db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=hello_django
+      - POSTGRES_PASSWORD=hello_django
+      - POSTGRES_DB=hello_django_dev
+    networks:
+      - alfa_romeo_network
+
+volumes:
+  postgres_data:
+
+networks:
+  alfa_romeo_network:

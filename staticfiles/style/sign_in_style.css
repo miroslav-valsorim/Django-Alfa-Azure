@@ -1,0 +1,102 @@
+/* HEADER */
+
+/* MAIN */
+.content{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url("/static/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-content: center;
+    background-position-y: 70%;
+    max-height: 700px;
+    height: 700px;
+}
+.content h2{
+    font-size: 40px;
+    margin-top: 140px;
+    text-align: center;
+}
+
+.forms{
+    margin: auto;
+    text-align: center;
+}
+
+.login-form-container{
+    width: 400px;
+}
+
+.login-form-container ::placeholder{
+    color: black;
+}
+
+.login-form-container p br{
+    display: none;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    max-width: 400px;
+}
+.login-form-container input{
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 0;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+}
+
+.login-form-container input:hover{
+    background-color: white;
+}
+
+.login-form-container label{
+    font-size: 20px;
+}
+.login-form-container button{
+    margin: auto;
+    margin-top: 10px;
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 2px solid red;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-form-container button:hover{
+    background-color: red;
+}
+
+.login-form-container p{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form-container a{
+    color: white;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+@media (max-width: 600px) {
+    .login-form-container{
+        width: 300px;
+        max-width: 400px;
+    }
+}

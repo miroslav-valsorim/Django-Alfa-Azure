@@ -1,0 +1,90 @@
+/* HEADER */
+
+/* MAIN */
+.profile-edit{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    align-content: center;
+}
+.profile-edit h2{
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.edit-form-container ::placeholder{
+    color: black;
+}
+
+.edit-form-container{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.edit-form-container input{
+    background-color: #eee;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px 0px 10px 0px;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+}
+
+.edit-form-container input:hover{
+    background-color: rgba(100, 100, 100, 0.66);
+}
+
+.edit-form-container label{
+    font-size: 20px;
+}
+.edit-form-container button{
+    margin: 20px 10px;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    padding: 5px 20px;
+    background-color: #52e128;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+    border: none;
+}
+
+.edit-form-container button:hover{
+    background-color: #38ff00;
+    transform: scale(1.1);
+}
+
+.edit-form-container p{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.both-containers{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.image{
+    border-radius: 100px;
+    overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+}
+.image img{
+    max-width: 200px;
+}
+
+/* FOOTER */

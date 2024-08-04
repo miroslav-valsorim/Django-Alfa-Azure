@@ -1,0 +1,145 @@
+/* HEADER */
+
+/* MAIN */
+.profile-details{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url("/static/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-content: center;
+    background-position-y: 70%;
+    max-height: 700px;
+    height: 700px;
+    vertical-align: middle;
+}
+
+.profile-details h2{
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center
+}
+
+.personal{
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 10px;
+    text-align: left;
+    color: black;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.personal .personal-info{
+    margin: 20px;
+}
+
+.personal p{
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.personal .links{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 250px;
+    padding: 6px 0;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 2px solid red;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.personal a:hover{
+    background-color: red;
+}
+
+.profile-links{
+    margin:0 10px;
+}
+
+.image{
+    border-radius: 100px;
+    overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 20px;
+}
+
+.image img{
+    max-width: 200px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* FOOTER */
+@media (max-width: 900px) {
+    .phone-number{
+       margin-top: 10px;
+        font-size: 22px;
+        font-weight: 600;
+        width: unset;
+        padding: unset;
+        text-align: unset;
+        border-radius: unset;
+        border: unset;
+        background: unset;
+        color: unset;
+        cursor: unset;
+        text-decoration: none;
+        overflow: hidden;
+    }
+
+     .personal{
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .profile-details {
+        height: unset;
+        max-height: unset;
+    }
+
+    .profile-img{
+        margin-top: 10px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .profile-details {
+        height: unset;
+        max-height: unset;
+    }
+
+    .personal{
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .personal-info p{
+        font-size: 18px;
+    }
+
+    .profile-details h2{
+        margin-top: 10px;
+    }
+
+    .image{
+        margin-top: 10px;
+    }
+
+}

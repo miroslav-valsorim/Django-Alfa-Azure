@@ -1,0 +1,151 @@
+.event-content{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url("/static/images/goodwood-47.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-content: center;
+    background-position-y: 70%;
+    max-height: 900px;
+    height: 800px;
+    vertical-align: middle;
+}
+
+.event-cards-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1400px;
+    margin: auto;
+}
+
+.event-card{
+    max-width: 400px;
+    height: 550px;
+    background-color: rgba(255,255,255,0.5);
+    color: black;
+    text-align: center;
+    transition: 0.5s;
+    margin: 20px;
+}
+
+.event-card:hover{
+    transform: scale(1.1);
+    background-color: rgba(255,255,255,0.7);
+    box-shadow: 0 0 15px #1a1a1a
+}
+
+.event-card h2{
+    padding-top: 20px;
+}
+
+.event-card p{
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.event-card a{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 250px;
+    padding: 6px 0;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 2px solid red;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.event-card a:hover{
+    background-color: red;
+}
+
+.image-container{
+    max-width: 400px;
+    height: 220px;
+    max-height: 220px;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.paginate-wrap{
+    display: block;
+    margin: 10px auto;
+}
+
+.paginate-wrap nav ul{
+    display: flex;
+}
+
+.paginate-wrap nav ul li{
+    margin: 0 10px;
+    list-style: none;
+    font-weight: 700;
+}
+
+.paginate-wrap nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.pagination li.active a {
+    color: red;
+}
+
+/*  RESPONSIVE */
+@media (max-width: 1400px) {
+    .event-content{
+        height: unset;
+        max-height: unset;
+    }
+
+    .event-cards-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 900px){
+    .event-content{
+        height: unset;
+        max-height: unset;
+    }
+
+    .event-cards-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+    .image-container{
+        max-width: 350px;
+        height: unset;
+    }
+
+    .event-card {
+        max-width: 350px;
+        height: unset;
+    }
+
+}
